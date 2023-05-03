@@ -13,21 +13,47 @@ void main() {
 
   final PageController controller = PageController();
   //calling the responsive function for onboarding1
-  ResponsiveLayout(onboarding1MobileView: Onboarding1MobileView(), onboarding1TabletView: Onboarding1TabletView(),);
+  // ResponsiveLayout(onboarding1MobileView: Onboarding1MobileView(), onboarding1TabletView: Onboarding1TabletView(),);
 
-
-  runApp(MaterialApp(
-    home: PageSelector(),
-  ));
+  runApp(MyApp());
 }
 
+//Creating MaterialApp class
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Glo',
+      theme: ThemeData(
+        primarySwatch: Colors.pink,
+      ),
+      home: Stack(
+          children: [
+            Positioned(
+                bottom: 0,
+                left: 0,
+                right: 0,
+                child: ResponsiveLayout(onboarding1MobileView: Onboarding1MobileView(), onboarding1TabletView: Onboarding1TabletView())),
+            PageSelector(),
+          ],
+        ),
+
+    );
+  }
+}
+
+
+
+//adjust these parameters
+//widgets to be used in the PageSelector class
 List<Widget> widgets = [
-  Onboarding1MobileView(),
-  Onboarding2MobileView(),
   Onboarding3MobileView(),
+  Onboarding2MobileView(),
+  Onboarding1MobileView(),
 
 ];
-
 //class to create a dotted page navigator
 class PageSelector extends StatefulWidget {
   const PageSelector({Key? key}) : super(key: key);

@@ -56,8 +56,8 @@ class Onboarding2MobileView extends StatelessWidget {
               padding: const EdgeInsets.fromLTRB(40.0, 40.0, 0.0, 20.0),
               child: Center(
                 child: FractionallySizedBox(
-                  widthFactor: 10.0, //50% of screen width
-                  heightFactor: 10.0, //20% of screen height
+                  widthFactor: 1.0, //% of screen width
+                  heightFactor: 1.0, //% of screen height
                   child: Transform.scale(
                     scale: 1.3,
                     child: Image(

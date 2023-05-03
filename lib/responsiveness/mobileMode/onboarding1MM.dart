@@ -27,32 +27,14 @@ class Onboarding1MobileView extends StatelessWidget {
 
         Stack(
           children: <Widget>[
-            //Increasing the size of the image
             Padding(
-              padding: EdgeInsets.fromLTRB(300.0, 0.0, 300.0, 320.0),
-              child: Transform.scale(
-                scale: 5.0,
-                child: Image(
-                  image: AssetImage('resources/$onboard1img'),
-                ),
-              ),
-            ),
-
-            Container(
-              width: MediaQuery.of(context).size.width,
-              height: MediaQuery.of(context).size.height,
-              color: Colors.black.withOpacity(0.9),
-            ),
-
-            //making the image centered no matter screen size
-            Padding(
-              padding: const EdgeInsets.fromLTRB(300.0, 0.0, 300.0, 500.0),
+              padding: const EdgeInsets.fromLTRB(0.0, 0.0, 140.0, 440.0),
               child: Center(
                 child: FractionallySizedBox(
-                  widthFactor: 50.0, //50% of screen width
-                  heightFactor: 20.0, //20% of screen height
+                  widthFactor: 30.0, //50% of screen width
+                  heightFactor: 30.0, //20% of screen height
                   child: Transform.scale(
-                    scale: 1.5,
+                    scale: 2.5,
                     child: Image(
                       image: AssetImage('resources/$onboard1img'),
                     ),
@@ -61,23 +43,53 @@ class Onboarding1MobileView extends StatelessWidget {
               ),
             ),
 
-            const Center(
-              child: Padding(
-                padding: EdgeInsets.fromLTRB(300.0, 380.0, 300.0, 100.0),
-                child: Text(
-                  'Welcome to Glo',
-                  style: TextStyle(
-                    fontSize: 32.0,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.pink,
+            FractionallySizedBox(
+              widthFactor: 100.0, //% of screen width
+              heightFactor: 100.0, //% of screen height
+              child: Container(
+                color: Colors.black.withOpacity(0.9),
+              ),
+            ),
+
+            //making the top image centered no matter screen size
+            Padding(
+              padding: const EdgeInsets.fromLTRB(0.0, 5.0, 0.0, 300.0),
+              child: Center(
+                child: FractionallySizedBox(
+                  widthFactor: 1.0, //% of screen width
+                  heightFactor: 1.0, //% of screen height
+                  child: Transform.scale(
+                    scale: 1.3,
+                    child: Image(
+                      image: AssetImage('resources/$onboard1img'),
+                    ),
                   ),
                 ),
               ),
             ),
 
-            const Center(
-              child: Padding(
-                padding: EdgeInsets.fromLTRB(300.0, 500.0, 300.0, 100.0),
+            const Positioned(
+                  bottom: 160,
+                  left: 100,
+                  right: 100,
+
+                  child: Text(
+                    'Welcome to Glo',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontSize: 32.0,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.pink,
+                    ),
+                  ),
+              ),
+
+
+            const Positioned(
+                bottom: 80,
+                left: 100,
+                right: 100,
+
                 child: Text(
                   'Get ready for a beauty revolution. Looking to upgrade your '
                       'beauty routine? Our app is the ultimate destination for '
@@ -85,12 +97,11 @@ class Onboarding1MobileView extends StatelessWidget {
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontSize: 16.0,
-                    fontWeight: FontWeight.bold,
+                    // fontWeight: FontWeight.bold,
                     color: Colors.pink,
                   ),
                 ),
               ),
-            ),
           ],
         ),
         // ),

@@ -27,13 +27,18 @@ class Onboarding1TabletView extends StatelessWidget {
 
         Stack(
           children: <Widget>[
-            //Increasing the size of the image
             Padding(
-              padding: EdgeInsets.fromLTRB(300.0, 0.0, 300.0, 320.0),
-              child: Transform.scale(
-                scale: 5.0,
-                child: Image(
-                  image: AssetImage('resources/$onboard1img'),
+              padding: const EdgeInsets.fromLTRB(0.0, 0.0, 140.0, 440.0),
+              child: Center(
+                child: FractionallySizedBox(
+                  widthFactor: 30.0, //50% of screen width
+                  heightFactor: 30.0, //20% of screen height
+                  child: Transform.scale(
+                    scale: 2.5,
+                    child: Image(
+                      image: AssetImage('resources/$onboard1img'),
+                    ),
+                  ),
                 ),
               ),
             ),
@@ -44,15 +49,15 @@ class Onboarding1TabletView extends StatelessWidget {
               color: Colors.black.withOpacity(0.9),
             ),
 
-            //making the image centered no matter screen size
+            //making the top image centered no matter screen size
             Padding(
-              padding: const EdgeInsets.fromLTRB(300.0, 0.0, 300.0, 500.0),
+              padding: const EdgeInsets.fromLTRB(0.0, 5.0, 0.0, 300.0),
               child: Center(
                 child: FractionallySizedBox(
-                  widthFactor: 50.0, //50% of screen width
-                  heightFactor: 20.0, //20% of screen height
+                  widthFactor: 10.0, //50% of screen width
+                  heightFactor: 10.0, //20% of screen height
                   child: Transform.scale(
-                    scale: 1.5,
+                    scale: 1.3,
                     child: Image(
                       image: AssetImage('resources/$onboard1img'),
                     ),
@@ -61,33 +66,37 @@ class Onboarding1TabletView extends StatelessWidget {
               ),
             ),
 
-            const Center(
-              child: Padding(
-                padding: EdgeInsets.fromLTRB(300.0, 380.0, 300.0, 100.0),
-                child: Text(
-                  'Welcome to Glo',
-                  style: TextStyle(
-                    fontSize: 32.0,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.pink,
-                  ),
+            const Positioned(
+              bottom: 110,
+              left: 100,
+              right: 100,
+
+              child: Text(
+                'Welcome to Glo',
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontSize: 40.0,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.green,
                 ),
               ),
             ),
 
-            const Center(
-              child: Padding(
-                padding: EdgeInsets.fromLTRB(300.0, 500.0, 300.0, 100.0),
-                child: Text(
-                  'Get ready for a beauty revolution. Looking to upgrade your '
-                      'beauty routine? Our app is the ultimate destination for '
-                      'all your beauty needs.',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontSize: 16.0,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.pink,
-                  ),
+
+            const Positioned(
+              bottom: 80,
+              left: 100,
+              right: 100,
+
+              child: Text(
+                'Get ready for a beauty revolution. Looking to upgrade your '
+                    'beauty routine? Our app is the ultimate destination for '
+                    'all your beauty needs.',
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontSize: 24.0,
+                  // fontWeight: FontWeight.bold,
+                  color: Colors.pink,
                 ),
               ),
             ),
