@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:glo/pages/makeupPage.dart';
 
 class Home extends StatelessWidget {
   Home({Key? key}) : super(key: key);
 
+  //variable declaration
   String makeupimg = 'makeup.png';
   String skincareimg = 'skin-care.png';
   String haircareimg = 'hair-care.png';
@@ -40,8 +42,8 @@ class Home extends StatelessWidget {
             child: ListView(
               children: [Table(
                   columnWidths: {
-                    0: FlexColumnWidth(1), //The 1st column is twice as wide
-                    1: FlexColumnWidth(1), //as the second column
+                    0: FlexColumnWidth(1), //Create a table with  2 columns
+                    1: FlexColumnWidth(1), //each having the same width
                   },
                   children: [
                     //row1
@@ -65,6 +67,11 @@ class Home extends StatelessWidget {
 
                         Padding(
                           padding: const EdgeInsets.all(50.0),
+                            //making the container pressable using gestureDetector
+                            child: GestureDetector(
+                              onTap: (){
+                                Navigator.pushNamed(context, '/makeupPage');
+                              },
                             child: Container(
                               height: 50,
                               width: 10,
@@ -84,7 +91,7 @@ class Home extends StatelessWidget {
                                   ),
                               ),
                             ),
-
+                            ),
                         ),
                       ],
                     ),

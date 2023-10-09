@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 class Onboarding1MobileView extends StatelessWidget {
   Onboarding1MobileView({Key? key}) : super(key: key);
 
+  //variable declaration
   String onboard1img = 'onboarding1.png';
   // final PageController controller = PageController();
 

@@ -2,11 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:glo/pages/onboarding1.dart';
 import 'package:glo/pages/onboarding2.dart';
 import 'package:glo/pages/onboarding3.dart';
+import 'package:glo/pages/makeupPage.dart';
 import 'package:glo/responsiveness/mobileMode/onboarding1MM.dart';
 import 'package:glo/responsiveness/mobileMode/onboarding2MM.dart';
 import 'package:glo/responsiveness/mobileMode/onboarding3MM.dart';
 import 'package:glo/responsiveness/tabletMode/onboarding1TM.dart';
 import 'package:glo/responsiveness/responsiveLayoutMM.dart';
+
 
 
 void main() {
@@ -18,7 +20,7 @@ void main() {
   runApp(MyApp());
 }
 
-//Creating MaterialApp class
+//Creating MyApp class
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
@@ -39,6 +41,9 @@ class MyApp extends StatelessWidget {
             PageSelector(),
           ],
         ),
+      routes: {
+        'makeupPage': (context) => const MakeupPage(),
+      },
 
     );
   }
