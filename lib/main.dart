@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:glo/pages/onboarding1.dart';
-import 'package:glo/pages/onboarding2.dart';
-import 'package:glo/pages/onboarding3.dart';
+//import 'package:glo/pages/onboarding1.dart';
+//import 'package:glo/pages/onboarding2.dart';
+//import 'package:glo/pages/onboarding3.dart';
 import 'package:glo/pages/makeupPage.dart';
 import 'package:glo/responsiveness/mobileMode/onboarding1MM.dart';
 import 'package:glo/responsiveness/mobileMode/onboarding2MM.dart';
@@ -13,7 +13,7 @@ import 'package:glo/responsiveness/responsiveLayoutMM.dart';
 
 void main() {
 
-  final PageController controller = PageController();
+  //final PageController controller = PageController();
   //calling the responsive function for onboarding1
   // ResponsiveLayout(onboarding1MobileView: Onboarding1MobileView(), onboarding1TabletView: Onboarding1TabletView(),);
 
