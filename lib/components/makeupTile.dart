@@ -16,7 +16,6 @@ class MakeupTile extends StatelessWidget {
         borderRadius: BorderRadius.circular(12),
       ),
       child: Column(
-        //mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           //icons to like and add items
           Row(
@@ -64,11 +63,7 @@ class MakeupTile extends StatelessWidget {
               ),
             ),
           ),
-          //price
-          //Row(
-            //mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            //children: [
-              //column with name and price
+
           Container(
             child: Transform.translate(
               offset: Offset(0.0, -70),
@@ -82,19 +77,6 @@ class MakeupTile extends StatelessWidget {
             ),
 
           ),
-              //create plus button to add to cart
-              // Column(
-              //   children: [
-              //     Container(
-              //       padding: EdgeInsets.all(20),
-              //       child: Icon(Icons.add_shopping_cart),
-              //     ),
-              //   ],
-              // ),
-            //],
-          //),
-
-          //button to add to cart
         ],
       ),
     );
