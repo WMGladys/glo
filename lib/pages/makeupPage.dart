@@ -45,7 +45,7 @@ class _MakeupPageState extends State<MakeupPage> {
         //Content of products
         Expanded(
           child: ListView.builder(
-            itemCount: 4,
+            itemCount: 6,
             itemBuilder: (context, index){
               //create a makeup object
               MakeUp makeupObj =  MakeUp(name: 'EarthGlow lip scrub', price: 'Ksh. 500', imagePath: 'lib/images/blush.png', description: 'Description');
