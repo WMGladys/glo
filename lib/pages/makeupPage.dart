@@ -43,16 +43,33 @@ class _MakeupPageState extends State<MakeupPage> {
         const SizedBox(height: 10,),
 
         //Content of products
+        // Expanded(
+        //   child: ListView.builder(
+        //     itemCount: 6,
+        //     itemBuilder: (context, index){
+        //       //create a makeup object
+        //       MakeUp makeupObj =  MakeUp(name: 'EarthGlow lip scrub', price: 'Ksh. 500', imagePath: 'lib/images/blush.png', description: 'Description');
+        //       return MakeupTile(
+        //         makeUp: makeupObj,
+        //       );
+        //     },
+        //   ),
+        // ),
         Expanded(
-          child: ListView.builder(
+          child: GridView.builder(
+            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 2, //number of columns
+              crossAxisSpacing: 4.0, //space between columns
+              mainAxisSpacing: 4.0, //space between rows
+            ),
             itemCount: 6,
             itemBuilder: (context, index){
               //create a makeup object
               MakeUp makeupObj =  MakeUp(name: 'EarthGlow lip scrub', price: 'Ksh. 500', imagePath: 'lib/images/blush.png', description: 'Description');
               return MakeupTile(
                 makeUp: makeupObj,
-              );
-            },
+                );
+              },
           ),
         ),
       ],

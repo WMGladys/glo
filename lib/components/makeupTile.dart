@@ -60,10 +60,9 @@ class MakeupTile extends StatelessWidget {
               child: Text(
                 //makeUp.description,
                 makeUp.name,
-                style: TextStyle(color: Colors.black, fontSize: 24, fontWeight: FontWeight.bold),
+                style: TextStyle(color: Colors.black, fontSize: 20, fontWeight: FontWeight.bold),
               ),
             ),
-
           ),
           //price
           //Row(
