@@ -47,7 +47,7 @@ class Cart extends ChangeNotifier{
   List<MakeUp> userCart = [];
 
   //getter method for list of shoes for sale
-  List<MakeUp> getShoeList(){
+  List<MakeUp> getMakeupList(){
     return makeupShop;
   }
 

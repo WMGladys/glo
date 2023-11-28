@@ -1,7 +1,9 @@
 //This is a class to display products with their details
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:glo/components/makeupTile.dart';
 import 'package:glo/models/makeUp.dart';
+import 'package:glo/models/cart.dart';
 
 class MakeupPage extends StatefulWidget {
   const MakeupPage({Key? key}) : super(key: key);
@@ -13,7 +15,7 @@ class MakeupPage extends StatefulWidget {
 class _MakeupPageState extends State<MakeupPage> {
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return Consumer<Cart> (builder: (context, value, child) => Column(
       children: [
         //search bar
         Container(
@@ -32,11 +34,14 @@ class _MakeupPageState extends State<MakeupPage> {
         //A message
         Padding(
           padding: const EdgeInsets.symmetric(vertical: 25.0),
-          child: Row(
-            children: [
-              Text('Shop/', style: TextStyle(color: Colors.grey),),
-              Text('Makeup', style: TextStyle(color: Colors.pink),),
-            ],
+          child: Padding(
+            padding: const EdgeInsets.only(left: 8.0),
+            child: Row(
+              children: [
+                Text('Shop/', style: TextStyle(color: Colors.grey),),
+                Text('Makeup', style: TextStyle(color: Colors.pink),),
+              ],
+            ),
           ),
         ),
 
@@ -52,15 +57,18 @@ class _MakeupPageState extends State<MakeupPage> {
             ),
             itemCount: 6,
             itemBuilder: (context, index){
-              //create a makeup object
-              MakeUp makeupObj =  MakeUp(name: 'EarthGlow lip scrub', price: 'Ksh. 500', imagePath: 'lib/images/blush.png', description: 'Description');
+              //create a makeup object from the makeupShop list
+              //The list is from 0 to the item count that was specified
+              MakeUp makeupObj =  value.getMakeupList()[index];
+              //return the makeup object in a tile
               return MakeupTile(
                 makeUp: makeupObj,
-                );
-              },
+              );
+            },
           ),
         ),
       ],
+    ),
     );
   }
 }
