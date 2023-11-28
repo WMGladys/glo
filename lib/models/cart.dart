@@ -1,7 +1,8 @@
 //This is class to create the template of a cart
+import 'package:flutter/cupertino.dart';
 import 'package:glo/models/makeUp.dart';
 
-class Cart{
+class Cart extends ChangeNotifier{
   //list of makeup products for sale
   List <MakeUp>makeupShop = [
     MakeUp(
@@ -58,11 +59,13 @@ class Cart{
   //method to add items to the cart
   void addItemToCart(MakeUp makeUp){
     userCart.add(makeUp);
+    notifyListeners();
   }
 
   //method to remove items from the cart
   void removeItemFromCart(MakeUp makeUp){
     userCart.remove(makeUp);
+    notifyListeners();
   }
 }
 
