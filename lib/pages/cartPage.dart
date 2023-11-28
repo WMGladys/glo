@@ -14,6 +14,7 @@ class CartPage extends StatelessWidget {
     return Consumer<Cart> (builder: (context, value, child) => Padding(
       padding: const EdgeInsets.symmetric(horizontal: 25.0),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           //heading
           const Text(
@@ -25,6 +26,7 @@ class CartPage extends StatelessWidget {
 
           Expanded(
             child: ListView.builder(
+              itemCount: value.getUserCart().length,
               itemBuilder: (context, index){
                 //get individual item
                 //MakeUp individualMakeup = value.getUserCart()[index];
