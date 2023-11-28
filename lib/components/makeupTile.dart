@@ -23,14 +23,26 @@ class MakeupTile extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               //like icon
-              Column(
-                children: [
-                  Container(
-                    padding: EdgeInsets.all(20),
-                    child: Icon(Icons.favorite_border),
-                  ),
-                ],
+              GestureDetector(
+                onTap: (){
+                  showDialog(
+                    context: context,
+                    builder: (context) => AlertDialog(
+                      title: Text('Success!'),
+                      content: Text('Item liked'),
+                    ),
+                  );
+                },
+                child: Column(
+                  children: [
+                    Container(
+                      padding: EdgeInsets.all(20),
+                      child: Icon(Icons.favorite_border),
+                    ),
+                  ],
+                ),
               ),
+
               //add to cart icon
               GestureDetector(
                 onTap: onTap,
