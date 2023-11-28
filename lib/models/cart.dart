@@ -1,7 +1,7 @@
 //This is class to create the template of a cart
 //import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:glo/models/makeUp.dart';
+import 'package:glo/models/makeup.dart';
 
 class Cart extends ChangeNotifier{
   //list of makeup products for sale

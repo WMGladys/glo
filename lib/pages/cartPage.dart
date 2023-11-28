@@ -4,7 +4,7 @@ import 'package:provider/provider.dart';
 import 'package:glo/models/cart.dart';
 import 'package:glo/components/cartItem.dart';
 import 'package:glo/models/makeup.dart';
-//import 'package:glo/pages/makeupPage.dart';
+import 'package:glo/pages/makeupPage.dart';
 
 class CartPage extends StatelessWidget {
   const CartPage({Key? key}) : super(key: key);
@@ -36,7 +36,8 @@ class CartPage extends StatelessWidget {
           ),
         ],
       ),
-    ),);
+    ),
+    );
   }
 }
 

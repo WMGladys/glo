@@ -1,5 +1,5 @@
 //This is a class to create a product and its attributes like image, price etc.
-import 'package:glo/models/cart.dart';
+//import 'package:glo/models/cart.dart';
 
 class MakeUp{
   final String name;

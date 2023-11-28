@@ -1,6 +1,6 @@
 //This class creates a card to display an item, in this case makeup, with its attributes
 import 'package:flutter/material.dart';
-import 'package:glo/models/makeUp.dart';
+import 'package:glo/models/makeup.dart';
 
 class MakeupTile extends StatelessWidget {
   MakeUp makeUp;

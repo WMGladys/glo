@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:glo/components/makeupTile.dart';
-import 'package:glo/models/makeUp.dart';
+import 'package:glo/models/makeup.dart';
 import 'package:glo/models/cart.dart';
 
 class MakeupPage extends StatefulWidget {

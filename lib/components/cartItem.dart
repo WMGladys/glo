@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:glo/models/makeUp.dart';
+import 'package:glo/models/makeup.dart';
 
 class CartItem extends StatefulWidget {
   MakeUp makeUpCart;
