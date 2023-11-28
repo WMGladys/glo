@@ -13,6 +13,20 @@ class MakeupPage extends StatefulWidget {
 }
 
 class _MakeupPageState extends State<MakeupPage> {
+
+  //add makeup to cart
+  void addMakeupToCart(MakeUp makeUp){
+    Provider.of<Cart> (context, listen: false).addItemToCart(makeUp);
+    //let the user know makeup was successfully added
+    showDialog(
+      context: context,
+      builder: (context) => AlertDialog(
+        title: Text('Successfully added!'),
+        content: Text('Check your cart.'),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Consumer<Cart> (builder: (context, value, child) => Column(
@@ -57,12 +71,13 @@ class _MakeupPageState extends State<MakeupPage> {
             ),
             itemCount: 6,
             itemBuilder: (context, index){
-              //create a makeup object from the makeupShop list
+              //Get a makeup product from the makeupShop list
               //The list is from 0 to the item count that was specified
               MakeUp makeupObj =  value.getMakeupList()[index];
               //return the makeup object in a tile
               return MakeupTile(
                 makeUp: makeupObj,
+                onTap: () => addMakeupToCart(makeupObj),
               );
             },
           ),
