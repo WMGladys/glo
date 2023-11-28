@@ -4,7 +4,8 @@ import 'package:glo/models/makeUp.dart';
 
 class MakeupTile extends StatelessWidget {
   MakeUp makeUp;
-  MakeupTile({super.key, required this.makeUp});
+  void Function()? onTap;
+  MakeupTile({super.key, required this.makeUp, required this.onTap});
 
   @override
   Widget build(BuildContext context) {
@@ -31,24 +32,32 @@ class MakeupTile extends StatelessWidget {
                 ],
               ),
               //add to cart icon
-              Column(
-                children: [
-                  Container(
-                    padding: EdgeInsets.all(20),
-                    child: Icon(Icons.add_shopping_cart),
-                  ),
-                ],
+              GestureDetector(
+                onTap: onTap,
+                child: Column(
+                  children: [
+                      Container(
+                        padding: EdgeInsets.all(20),
+                        child: Icon(Icons.add_shopping_cart),
+                      ),
+                  ],
+                ),
               ),
             ],
           ),
 
           //picture
           Container(
+            width: 280, //same as tile width
+            height: 220,
             child: Transform.translate(
               offset: Offset(0.0, -100.0),
               child: ClipRRect(
                   borderRadius: BorderRadius.circular(12),
-                  child: Image.asset(makeUp.imagePath)
+                  child: Image(
+                    image: AssetImage(makeUp.imagePath),
+                    fit: BoxFit.fill,
+                  ),
               ),
             ),
           ),
@@ -71,7 +80,7 @@ class MakeupTile extends StatelessWidget {
                 children: [
                   //Text(makeUp.name),
                   Text(makeUp.description, style: TextStyle(fontSize: 18),),
-                  Text(makeUp.price, style: TextStyle(fontSize: 18),),
+                  Text('Ksh. ' + makeUp.price, style: TextStyle(fontSize: 18),),
                 ],
               ),
             ),

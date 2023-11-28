@@ -49,7 +49,7 @@ class _MakeupPageState extends State<MakeupPage> {
         Padding(
           padding: const EdgeInsets.symmetric(vertical: 25.0),
           child: Padding(
-            padding: const EdgeInsets.only(left: 8.0),
+            padding: const EdgeInsets.only(left: 18.0),
             child: Row(
               children: [
                 Text('Shop/', style: TextStyle(color: Colors.grey),),
