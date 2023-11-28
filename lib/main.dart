@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:flutter/cupertino.dart';
 //import 'package:glo/pages/onboarding1.dart';
 //import 'package:glo/pages/onboarding2.dart';
 //import 'package:glo/pages/onboarding3.dart';
@@ -8,6 +10,7 @@ import 'package:glo/responsiveness/mobileMode/onboarding2MM.dart';
 import 'package:glo/responsiveness/mobileMode/onboarding3MM.dart';
 import 'package:glo/responsiveness/tabletMode/onboarding1TM.dart';
 import 'package:glo/responsiveness/responsiveLayoutMM.dart';
+import 'package:glo/models/cart.dart';
 
 
 
@@ -26,26 +29,51 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Glo',
-      theme: ThemeData(
-        primarySwatch: Colors.pink,
-      ),
-      home: Stack(
-          children: [
-            Positioned(
-                bottom: 0,
-                left: 0,
-                right: 0,
-                child: ResponsiveLayout(onboarding1MobileView: Onboarding1MobileView(), onboarding1TabletView: Onboarding1TabletView())),
-            PageSelector(),
-          ],
+    return ChangeNotifierProvider(
+      create: (context) => Cart(),
+      builder: (context, child) => MaterialApp(
+          debugShowCheckedModeBanner: false,
+          title: 'Glo',
+          theme: ThemeData(
+            primarySwatch: Colors.pink,
+          ),
+          home: Stack(
+            children: [
+              Positioned(
+                  bottom: 0,
+                  left: 0,
+                  right: 0,
+                  child: ResponsiveLayout(onboarding1MobileView: Onboarding1MobileView(), onboarding1TabletView: Onboarding1TabletView())),
+              PageSelector(),
+            ],
+          ),
+          routes: {
+            'makeupPage': (context) => const MakeupPage(),
+          },
         ),
-      routes: {
-        'makeupPage': (context) => const MakeupPage(),
-      },
-
     );
+
+    //   MaterialApp(
+    //   debugShowCheckedModeBanner: false,
+    //   title: 'Glo',
+    //   theme: ThemeData(
+    //     primarySwatch: Colors.pink,
+    //   ),
+    //   home: Stack(
+    //       children: [
+    //         Positioned(
+    //             bottom: 0,
+    //             left: 0,
+    //             right: 0,
+    //             child: ResponsiveLayout(onboarding1MobileView: Onboarding1MobileView(), onboarding1TabletView: Onboarding1TabletView())),
+    //         PageSelector(),
+    //       ],
+    //     ),
+    //   routes: {
+    //     'makeupPage': (context) => const MakeupPage(),
+    //   },
+    //
+    // );
   }
 }
 
