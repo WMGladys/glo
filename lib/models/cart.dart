@@ -1,5 +1,6 @@
 //This is class to create the template of a cart
-import 'package:flutter/cupertino.dart';
+//import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:glo/models/makeUp.dart';
 
 class Cart extends ChangeNotifier{
