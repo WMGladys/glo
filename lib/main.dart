@@ -11,14 +11,15 @@ import 'package:glo/responsiveness/mobileMode/onboarding3MM.dart';
 import 'package:glo/responsiveness/tabletMode/onboarding1TM.dart';
 import 'package:glo/responsiveness/responsiveLayoutMM.dart';
 import 'package:glo/models/cart.dart';
-
+import 'package:mpesa_flutter_plugin/mpesa_flutter_plugin.dart';
+import 'package:mpesa_flutter_plugin/initializer.dart';
+import 'package:glo/keys.dart';
 
 
 void main() {
 
-  //final PageController controller = PageController();
-  //calling the responsive function for onboarding1
-  // ResponsiveLayout(onboarding1MobileView: Onboarding1MobileView(), onboarding1TabletView: Onboarding1TabletView(),);
+  MpesaFlutterPlugin.setConsumerKey(kConsumerKey);
+  MpesaFlutterPlugin.setConsumerSecret(kConsumerSecret);
 
   runApp(MyApp());
 }
