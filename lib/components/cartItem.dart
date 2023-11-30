@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:glo/models/makeup.dart';
 import 'package:provider/provider.dart';
 import 'package:glo/models/cart.dart';
+import 'package:glo/pages/paymentPage.dart';
 
 class CartItem extends StatefulWidget {
   MakeUp makeUpCart;
@@ -20,16 +21,25 @@ class _CartItemState extends State<CartItem> {
   
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(color: Colors.pink[100], borderRadius: BorderRadius.circular(8)),
-      margin: const EdgeInsets.only(bottom: 10),
-      child: ListTile(
-        leading: Image.asset(widget.makeUpCart.imagePath),
-        title: Text(widget.makeUpCart.name),
-        subtitle: Text(widget.makeUpCart.price),
-        trailing: IconButton(
-          icon: Icon(Icons.delete),
-          onPressed: removeItemFromCart,
+    return InkWell(
+      onTap: (){
+        //navigate to payment page
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => PaymentPage()),
+        );
+      },
+      child: Container(
+        decoration: BoxDecoration(color: Colors.pink[100], borderRadius: BorderRadius.circular(8)),
+        margin: const EdgeInsets.only(bottom: 10),
+        child: ListTile(
+          leading: Image.asset(widget.makeUpCart.imagePath),
+          title: Text(widget.makeUpCart.name),
+          subtitle: Text(widget.makeUpCart.price),
+          trailing: IconButton(
+            icon: Icon(Icons.delete),
+            onPressed: removeItemFromCart,
+          ),
         ),
       ),
     );

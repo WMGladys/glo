@@ -29,7 +29,6 @@ class CartPage extends StatelessWidget {
               itemCount: value.getUserCart().length,
               itemBuilder: (context, index){
                 //get individual item
-                //MakeUp individualMakeup = value.getUserCart()[index];
                 MakeUp individualMakeup = value.getUserCart()[index];
                 //return the cart item
                 return CartItem(makeUpCart: individualMakeup);
