@@ -1,5 +1,6 @@
 //This is a class to display products with their details
 import 'package:flutter/material.dart';
+import 'package:glo/pages/searchScreen.dart';
 import 'package:provider/provider.dart';
 import 'package:glo/components/makeupTile.dart';
 import 'package:glo/models/makeup.dart';
@@ -36,12 +37,20 @@ class _MakeupPageState extends State<MakeupPage> {
           padding: const EdgeInsets.all(12),
           margin: const EdgeInsets.symmetric(horizontal: 18),
           decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(8), border: Border.all(color: Colors.pinkAccent)),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: const [
-              Text('search', style: TextStyle(color: Colors.grey),),
-              Icon(Icons.search, color: Colors.grey,),
-            ],
+          child: InkWell(
+            onTap: (){
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => SearchScreen()),
+              );
+            },
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: const [
+                Text('search', style: TextStyle(color: Colors.grey),),
+                Icon(Icons.search, color: Colors.grey,),
+              ],
+            ),
           ),
         ),
 
