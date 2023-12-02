@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:glo/models/makeup.dart';
+import 'package:glo/pages/productDetails.dart';
 
 class SearchScreen extends StatefulWidget {
   //MakeUp makeUpSearch;
@@ -106,7 +107,12 @@ class _SearchScreenState extends State<SearchScreen> {
                   :ListView.builder(
                     itemCount: displayList.length,
                     itemBuilder: (context, index) =>InkWell(
-                      onTap: (){},
+                      onTap: (){
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => ProductDetails(makeUpProduct: displayList[index],)),
+                        );
+                      },
                       child: ListTile(
                         contentPadding: EdgeInsets.all(8.0),
                         title: Text(displayList[index].name!, style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),),
