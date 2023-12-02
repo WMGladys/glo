@@ -11,16 +11,21 @@ import 'package:glo/responsiveness/mobileMode/onboarding3MM.dart';
 import 'package:glo/responsiveness/tabletMode/onboarding1TM.dart';
 import 'package:glo/responsiveness/responsiveLayoutMM.dart';
 import 'package:glo/models/cart.dart';
-import 'package:mpesa_flutter_plugin/mpesa_flutter_plugin.dart';
-import 'package:mpesa_flutter_plugin/initializer.dart';
-import 'package:glo/keys.dart';
-
+// import 'package:mpesa_flutter_plugin/mpesa_flutter_plugin.dart';
+// import 'package:mpesa_flutter_plugin/initializer.dart';
+// import 'package:glo/keys.dart';
+import 'package:flutter/services.dart';
+import 'package:glo/pages/card.dart'; // Import your card page
+import 'package:webview_flutter/webview_flutter.dart';
+import 'package:flutter/foundation.dart' show kIsWeb;
+import 'dart:io';
+import 'package:flutter/foundation.dart';
 
 void main() {
-
-  MpesaFlutterPlugin.setConsumerKey(kConsumerKey);
-  MpesaFlutterPlugin.setConsumerSecret(kConsumerSecret);
-
+  FlutterError.onError = (details) {
+    FlutterError.presentError(details);
+    if (kReleaseMode) exit(1);
+  };
   runApp(MyApp());
 }
 

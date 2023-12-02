@@ -3,6 +3,7 @@ import 'package:glo/models/makeup.dart';
 import 'package:provider/provider.dart';
 import 'package:glo/models/cart.dart';
 import 'package:glo/pages/paymentPage.dart';
+import 'package:glo/pages/card.dart';
 
 class CartItem extends StatefulWidget {
   MakeUp makeUpCart;
@@ -26,7 +27,7 @@ class _CartItemState extends State<CartItem> {
         //navigate to payment page
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => PaymentPage()),
+          MaterialPageRoute(builder: (context) => CardPage()),
         );
       },
       child: Container(
