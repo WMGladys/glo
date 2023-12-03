@@ -2,8 +2,15 @@
 //import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:glo/models/makeup.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 class Cart extends ChangeNotifier{
+
+  // final CollectionReference makeupCollection =
+  // FirebaseFirestore.instance.collection('products');
+
+  // List<MakeUp> makeupShop = [];
+
   //list of makeup products for sale
   List <MakeUp>makeupShop = [
     MakeUp(
@@ -47,6 +54,9 @@ class Cart extends ChangeNotifier{
   //list of items in the user's cart
   List<MakeUp> userCart = [];
 
+  //list of items in the user's favorites
+  List<MakeUp> userLiked = [];
+
   //getter method for list of shoes for sale
   List<MakeUp> getMakeupList(){
     return makeupShop;
@@ -55,6 +65,11 @@ class Cart extends ChangeNotifier{
   //getter method for cart items
   List<MakeUp> getUserCart(){
     return userCart;
+  }
+
+  //getter method for favorites items
+  List<MakeUp> getUserLiked(){
+    return userLiked;
   }
 
   //method to add items to the cart
@@ -68,6 +83,29 @@ class Cart extends ChangeNotifier{
     userCart.remove(makeUp);
     notifyListeners();
   }
+
+  //method to add items to the favorites
+  void addItemToLiked(MakeUp makeUp){
+    userLiked.add(makeUp);
+    notifyListeners();
+  }
+  //method to remove items from the liked
+  void removeItemFromLiked(MakeUp makeUp){
+    userLiked.remove(makeUp);
+    notifyListeners();
+  }
+
+  // Future<void> fetchMakeupFromFirestore() async {
+  //   try {
+  //     QuerySnapshot querySnapshot = await makeupCollection.get();
+  //     makeupShop = querySnapshot.docs
+  //         .map((doc) => MakeUp.fromFirestore(doc.data() as Map<String, dynamic>))
+  //         .toList();
+  //     notifyListeners();
+  //   }catch (e) {
+  //     print('Error fetching makeup from Firestore: $e');
+  //   }
+  // }
 }
 
 //< > ()  : {} _ $ + & ? % !

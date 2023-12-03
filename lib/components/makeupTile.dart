@@ -1,11 +1,14 @@
 //This class creates a card to display an item, in this case makeup, with its attributes
 import 'package:flutter/material.dart';
 import 'package:glo/models/makeup.dart';
+import 'package:provider/provider.dart';
+import 'package:glo/models/cart.dart';
 
 class MakeupTile extends StatelessWidget {
   MakeUp makeUp;
   void Function()? onTap;
-  MakeupTile({super.key, required this.makeUp, required this.onTap});
+  void Function()? onLike;
+  MakeupTile({super.key, required this.makeUp, required this.onTap, required this.onLike});
 
   @override
   Widget build(BuildContext context) {
@@ -22,17 +25,10 @@ class MakeupTile extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
+
               //like icon
               GestureDetector(
-                onTap: (){
-                  showDialog(
-                    context: context,
-                    builder: (context) => AlertDialog(
-                      title: Text('Success!'),
-                      content: Text('Item liked'),
-                    ),
-                  );
-                },
+                onTap: onLike,
                 child: Column(
                   children: [
                     Container(
@@ -42,6 +38,26 @@ class MakeupTile extends StatelessWidget {
                   ],
                 ),
               ),
+
+              // GestureDetector(
+              //   onTap: (){
+              //     showDialog(
+              //       context: context,
+              //       builder: (context) => AlertDialog(
+              //         title: Text('Success!'),
+              //         content: Text('Item liked'),
+              //       ),
+              //     );
+              //   },
+              //   child: Column(
+              //     children: [
+              //       Container(
+              //         padding: EdgeInsets.all(20),
+              //         child: Icon(Icons.favorite_border),
+              //       ),
+              //     ],
+              //   ),
+              // ),
 
               //add to cart icon
               GestureDetector(

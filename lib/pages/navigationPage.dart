@@ -7,9 +7,12 @@ import 'package:glo/pages/makeupPage.dart';
 import 'package:glo/pages/cartPage.dart';
 import 'package:glo/pages/favouritesPage.dart';
 import 'package:glo/pages/settings.dart';
+import 'package:glo/models/cart.dart';
 
 class NavigationPage extends StatefulWidget {
-  const NavigationPage({Key? key}) : super(key: key);
+
+  NavigationPage({Key? key}) : super(key: key);
+  // final Cart cart = Cart(); // Create an instance of Cart
 
   @override
   State<NavigationPage> createState() => _NavigationPageState();

@@ -7,17 +7,42 @@ import 'package:glo/models/makeup.dart';
 import 'package:glo/models/cart.dart';
 
 class MakeupPage extends StatefulWidget {
+  // final Cart cart;
   const MakeupPage({Key? key}) : super(key: key);
 
   @override
   State<MakeupPage> createState() => _MakeupPageState();
+
+  // factory MakeupPage.withCart(Cart cart) {
+  //   return MakeupPage(cart: cart);
+  // }
 }
 
 class _MakeupPageState extends State<MakeupPage> {
 
+  // @override
+  // void initState() {
+  //   super.initState();
+  //   // Call fetchMakeupFromFirestore when the widget is initialized
+  //   widget.cart.fetchMakeupFromFirestore();
+  // }
+
   //add makeup to cart
   void addMakeupToCart(MakeUp makeUp){
     Provider.of<Cart> (context, listen: false).addItemToCart(makeUp);
+    //let the user know makeup was successfully added
+    showDialog(
+      context: context,
+      builder: (context) => AlertDialog(
+        title: Text('Successfully added!'),
+        content: Text('Check your cart.'),
+      ),
+    );
+  }
+
+  //add makeup to liked
+  void addMakeupToLiked(MakeUp makeUp){
+    Provider.of<Cart> (context, listen: false).addItemToLiked(makeUp);
     //let the user know makeup was successfully added
     showDialog(
       context: context,
@@ -87,6 +112,7 @@ class _MakeupPageState extends State<MakeupPage> {
               return MakeupTile(
                 makeUp: makeupObj,
                 onTap: () => addMakeupToCart(makeupObj),
+                onLike: () => addMakeupToLiked(makeupObj),
               );
             },
           ),
