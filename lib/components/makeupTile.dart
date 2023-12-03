@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:glo/models/makeup.dart';
 import 'package:provider/provider.dart';
 import 'package:glo/models/cart.dart';
+import 'package:like_button/like_button.dart';
 
 class MakeupTile extends StatelessWidget {
   MakeUp makeUp;
@@ -25,6 +26,12 @@ class MakeupTile extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
+
+              // LikeButton(
+              //   size: 60,
+              //   onTap: onLike,
+              //   itemCount: 0,
+              // ),
 
               //like icon
               GestureDetector(

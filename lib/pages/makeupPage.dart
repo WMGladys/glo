@@ -48,7 +48,7 @@ class _MakeupPageState extends State<MakeupPage> {
       context: context,
       builder: (context) => AlertDialog(
         title: Text('Successfully added!'),
-        content: Text('Check your cart.'),
+        content: Text('Check your liked.'),
       ),
     );
   }
