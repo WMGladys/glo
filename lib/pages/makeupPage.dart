@@ -20,12 +20,12 @@ class MakeupPage extends StatefulWidget {
 
 class _MakeupPageState extends State<MakeupPage> {
 
-  // @override
-  // void initState() {
-  //   super.initState();
-  //   // Call fetchMakeupFromFirestore when the widget is initialized
-  //   widget.cart.fetchMakeupFromFirestore();
-  // }
+  @override
+  void initState() {
+    super.initState();
+    // Call fetchMakeupFromFirestore when the widget is initialized
+    widget.cart.fetchMakeupFromFirestore();
+  }
 
   //add makeup to cart
   void addMakeupToCart(MakeUp makeUp){
