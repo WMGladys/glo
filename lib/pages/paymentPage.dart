@@ -59,27 +59,27 @@ class _PaymentPage extends State<PaymentPage> {
       throw 'Payment Unsuccesful';
     }
   }
-//   Future<bool> verifyTransaction(String reference) async {
-//     final String url = 'https://api.paystack.co/transaction/verify/$reference';
-//     try {
-//       final response = await http.get(Uri.parse(url), headers: {
-//         'Authorization': 'Bearer ${ApiKey.secretKey}',
-//         'Content-Type': 'application/json'
-//       });
-//       if (response.statusCode == 200) {
-//         final responseData = jsonDecode(response.body);
-//         if (responseData['data']['gateway_response'] == 'Approved') {
-//           return true;
-//         } else {
-//           return false;
-//         }
-//       } else {
-//         return false;
-//       }
-//     } on Exception {
-//       return false;
-//     }
-//   }
+  Future<bool> verifyTransaction(String reference) async {
+    final String url = 'https://api.paystack.co/transaction/verify/$reference';
+    try {
+      final response = await http.get(Uri.parse(url), headers: {
+        'Authorization': 'Bearer ${ApiKey.secretKey}',
+        'Content-Type': 'application/json'
+      });
+      if (response.statusCode == 200) {
+        final responseData = jsonDecode(response.body);
+        if (responseData['data']['gateway_response'] == 'Approved') {
+          return true;
+        } else {
+          return false;
+        }
+      } else {
+        return false;
+      }
+    } on Exception {
+      return false;
+    }
+  }
 //
   Future<String> initializeTransaction() async {
     try {
