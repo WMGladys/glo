@@ -87,7 +87,7 @@ class _PaymentPage extends State<PaymentPage> {
       final transaction = Transaction(
         amount: (price * 100).toString(),
         reference: widget.reference,
-        currency: 'GHS ',
+        currency: 'KES ',
         email: widget.email,
       );
 
