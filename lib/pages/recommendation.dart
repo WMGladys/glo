@@ -45,30 +45,3 @@ class RecommendationAlgorithm {
     return combinedRecommendations;
   }
 }
-
-// void main() {
-//   // Sample data
-//   final products = [
-//     Product(id: '1', name: 'Product A', categories: ['Category1'], price: 100),
-//     Product(id: '2', name: 'Product B', categories: ['Category2'], price: 150),
-//     Product(id: '3', name: 'Product C', categories: ['Category1'], price: 120),
-//     // Add more products
-//   ];
-//
-//   final users = [
-//     User(viewedProducts: [products[0]], purchasedProducts: []),
-//     User(viewedProducts: [products[1]], purchasedProducts: [products[0]]),
-//     // Add more users
-//   ];
-//
-//   // Recommendation algorithm instance
-//   final recommendationAlgorithm = RecommendationAlgorithm(allProducts: products, allUsers: users);
-//
-//   // Sample: Get hybrid recommendations for the first user
-//   final user = users[0];
-//   final recommendations = recommendationAlgorithm.hybridRecommendation(user);
-//
-//   // Print recommendations
-//   print('Hybrid Recommendations for User ${users.indexOf(user) + 1}:');
-//   recommendations.forEach((product) => print('${product.name} - ${product.price}'));
-// }
