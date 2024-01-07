@@ -11,7 +11,7 @@ class Cart extends ChangeNotifier{
 
   // List<MakeUp> makeupShop = [];
 
-  //list of makeup products for sale
+  //dummy list of makeup products for sale
   List <MakeUp>makeupShop = [
     MakeUp(
       imagePath: 'lib/images/blush.png',
