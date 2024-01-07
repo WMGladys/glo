@@ -4,6 +4,7 @@ import 'package:flutter/cupertino.dart';
 //import 'package:glo/pages/onboarding1.dart';
 //import 'package:glo/pages/onboarding2.dart';
 //import 'package:glo/pages/onboarding3.dart';
+import 'package:glo/pages/recommendation.dart';
 import 'package:glo/pages/makeupPage.dart';
 import 'package:glo/responsiveness/mobileMode/onboarding1MM.dart';
 import 'package:glo/responsiveness/mobileMode/onboarding2MM.dart';
@@ -80,6 +81,19 @@ class MyApp extends StatelessWidget {
     //   },
     //
     // );
+    
+    // Recommendation algorithm instance
+  final recommendationAlgorithm = RecommendationAlgorithm(allProducts: products, allUsers: users);
+
+  // Sample: Get hybrid recommendations for the first user
+  final user = users[0];
+  final recommendations = recommendationAlgorithm.hybridRecommendation(user);
+
+  // Print recommendations
+  print('Hybrid Recommendations for User ${users.indexOf(user) + 1}:');
+  recommendations.forEach((product) => print('${product.name} - ${product.price}'));
+  }
+
   }
 }
 
